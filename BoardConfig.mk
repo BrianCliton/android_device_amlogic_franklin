@@ -19,5 +19,15 @@ BOARD_SUPER_PARTITION_SIZE := 2084569088
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+
+## Wi-Fi
+BOARD_WLAN_DEVICE := realtek
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_rtl
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_rtl
+WIFI_DRIVER_SOCKET_IFACE := wlan0
+PRODUCT_CFI_INCLUDE_PATHS += hardware/realtek/wlan/wpa_supplicant_8_lib
+
 ## Include the common tree BoardConfig makefile
 include device/amlogic/sm1-common/BoardConfigCommon.mk
