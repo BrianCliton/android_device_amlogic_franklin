@@ -17,8 +17,10 @@ TARGET_AMLOGIC_SOC := sm1
 ## TEE
 TARGET_HAS_TEE := false
 
-## Wi-Fi
-BOARD_HAVE_WIFI := false
+
+## Init-Files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init-files/init.amlogic.wifi_buildin.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.amlogic.wifi_buildin.rc
 
 ## Inherit from the common tree product makefile
 $(call inherit-product, device/amlogic/sm1-common/sm1.mk)
